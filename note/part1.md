@@ -29,11 +29,10 @@
 一种衡量指标，用于衡量模型的[**预测**](https://developers.google.cn/machine-learning/crash-course/glossary#prediction)偏离其[**标签**](https://developers.google.cn/machine-learning/crash-course/glossary#label)的程度。或者更悲观地说是衡量模型有多差。要确定此值，模型必须定义损失函数。例如，线性回归模型通常将[**均方误差**](https://developers.google.cn/machine-learning/crash-course/glossary#MSE)用于损失函数，而逻辑回归模型则使用[**对数损失函数**](https://developers.google.cn/machine-learning/crash-course/glossary#Log_Loss)。
 
 均方误差（MSE）：
-$$
-MSE = \frac{1}{N} \sum_{(x,y)\in D} (y - prediction(x))^2
-$$
 
-### 3.降低损失
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/1.png)
+
+3.降低损失
 
  梯度下降算法中，下一点位置 = 梯度x学习速率（步长）
 

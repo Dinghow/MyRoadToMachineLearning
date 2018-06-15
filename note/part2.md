@@ -5,10 +5,10 @@
 定义：通过降低复杂模型的复杂度来**防止过拟合**的原则称为正则化
 
 为了避免训练集数据过拟合，应该求**结构风险最小化**（最小化损失和复杂度）：
-$$
-\text{minimize(Loss(Data|Model) + complexity(Model))}
-$$
-![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/FireShot Capture 2 - 简化正则化 (Regularization for Simplicity)：_ - https___developers.google.cn_machin.png)
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/2.png)
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/google-4.png)
 
 而衡量模型复杂度有两种常见方式：
 
@@ -16,10 +16,7 @@ $$
 
   可以使用 **L2 正则化**公式来量化复杂度，该公式将正则化项定义为所有特征权重的平方和：
 
-  L2 regularization term=||w||22=w12+w22+...+wn2
-  $$
-  L_2\text{ regularization term} = ||\boldsymbol w||_2^2 = {w_1^2 + w_2^2 + ... + w_n^2}
-  $$
+  ![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/3.png)
 
 - 用具有非零权重的特征总数的函数
 
@@ -39,9 +36,9 @@ lambda又称**正则化率**
 模型开发者通过以下方式来调整正则化项的整体影响：用正则化项的值乘以名为 **lambda**的标量
 
 即：
-$$
-\text{minimize(Loss(Data|Model)} + \lambda \text{ complexity(Model))}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/4.png)
+
 增加lambda值将增强正则化的效果（直方图更剧烈），降低lambda值则会得到比较平缓的直方图
 
 理想的 lambda 值取决于数据，因此您需要手动或自动进行一些调整
@@ -57,28 +54,25 @@ $$
 #### S型函数的运用
 
 如果 z 表示使用逻辑回归训练的模型的线性层的输出，则 S 型(z) 函数会生成一个介于 0 和 1 之间的值（概率）。用数学方法表示为：
-$$
-y' = \frac{1}{1 + e^{-(z)}}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/5.png)
 
 - y' 是逻辑回归模型针对特定样本的输出
 
 - z 是 b + w1x1 + w2x2 + … wNxN，又称为对数几率，因为z的反函数为：
-  $$
-  z = log(\frac{y}{1-y})
-  $$
+
+  ![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/6.png)
 
   - w:该模型学习的权重和偏差
   - x:特定样本的特征值
 
-![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/FireShot Capture 3 - 逻辑回归 (Logistic Regression)：计算概率  I  机器_ - https___developers.google.cn_machin.png)
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/google-5.png)
 
 #### 损失函数
 
 对数损失函数：
-$$
-Log Loss = \sum_{(x,y)\in D} -ylog(y') - (1 - y)log(1 - y')
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/7.png)
 
 - (x,y)&straightepsilon;D 是包含很多有标签样本 (x,y) 的数据集。
 - “y”是有标签样本中的标签。由于这是逻辑回归，因此“y”的每个值必须是 0 或 1。
@@ -114,46 +108,43 @@ TP,TN不会造成损失
 #### 准确率(Accuracy)
 
 定义：预测正确的结果所占比例
-$$
-\text{Accuracy} = \frac{\text{Number of correct predictions}}{\text{Total number of predictions}}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/8.png)
+
 二分类问题中
-$$
-\text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/9.png)
 
 #### 精确率和召回率（Precision & Recall）
 
 ##### 精确率
 
 定义：表示的是预测为正的样本中有多少是真正的正样本，又称为**查准率**
-$$
-\text{Precision}= \frac{TP}{TP+FP}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/10.png)
 
 ##### 召回率
 
 定义：表示真正的正样本中有多少被正确预测，又称为**查全率**
-$$
-\text{Recall}= \frac{TP}{TP+FN}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/11.png)
+
 查准和查全二者之间是矛盾的。查准率高（尽可能只挑选有把握的），那查全率就会低；查全率高（试想把所有类别都预测为正例），那查准率就会低。
 
 为了综合考虑二者，常常采用$F_1$值：
-$$
-F_1 = \frac{2}{\frac{1}{recall}+\frac{1}{precision}}=2 * \frac{precision*recall}{precision+recall}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/12.png)
 
 #### ROC和曲线下面积
 
 真正例率	(TPR)：等同于召回率
-$$
-TPR = \frac{TP}{TP+FN}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/13.png)
+
 假正例率(FPR)：
-$$
-FPR = \frac{FP}{FP+TN}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/14.png)
+
 ROC 曲线用于绘制采用不同分类阈值时的 TPR 与 FPR
 
 #### ROC和曲线下面积
@@ -161,16 +152,16 @@ ROC 曲线用于绘制采用不同分类阈值时的 TPR 与 FPR
 ##### ROC曲线
 
 真正例率(TPR)：等同于召回率
-$$
-TPR = \frac{TP}{TP+FN}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/15.png)
+
 假正例率(FPR)：
-$$
-FPR = \frac{FP}{FP+TN}
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/16.png)
+
 ROC(Receiver Operating Characteristic Curve)曲线用于绘制采用不同分类阈值时的 TPR 与 FPR，横轴为FPR，纵轴为TPR
 
-![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/FireShot Capture 7 - 分类 (Classification)：ROC 和曲线下面积  I  机器学_ - https___developers.google.cn_machin.png)
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/google-6.png)
 
 ROC曲线的主要作用：
 
