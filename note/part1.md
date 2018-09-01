@@ -32,9 +32,15 @@
 
 ![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/1.png)
 
-3.降低损失
+### 3.降低损失
+
+在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。
 
  梯度下降算法中，下一点位置 = 梯度x学习速率（步长）
+
+> **梯度(gradient)**：[**偏导数**](https://developers.google.cn/machine-learning/glossary/#partial_derivative)相对于所有自变量的向量。 在机器学习中，梯度是模型函数偏导数的向量。梯度指向最快上升的方向。
+>
+> **梯度下降法(gradient descent)**：一种通过计算并且减小梯度将[**损失**](https://developers.google.cn/machine-learning/glossary/#loss)降至最低的技术，它以训练数据为条件，来计算损失相对于模型参数的梯度。通俗来说，梯度下降法以迭代方式调整参数，逐渐找到[**权重**](https://developers.google.cn/machine-learning/glossary/#weight)和偏差的最佳组合，从而将损失降至最低。
 
 #### 迭代方法
 
