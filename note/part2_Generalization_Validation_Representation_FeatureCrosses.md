@@ -1,57 +1,3 @@
-## 机器学习概念
-
-### 1.框架处理
-
-#### 常见术语
-
-- 标签：预测的事物，y变量
-- 特征：输入变量，x变量
-- 模型：定义了x与y之间的关系
-
-监督学习：
-
-- 分类：离散值（好坏）
-- 回归：连续值（价格）
-
-无监督学习：
-
-- 聚类
-
-
-
-
-### 2.深入了解机器学习
-
-#### 训练与损失：
-
-##### 损失 (Loss)
-
-一种衡量指标，用于衡量模型的[**预测**](https://developers.google.cn/machine-learning/crash-course/glossary#prediction)偏离其[**标签**](https://developers.google.cn/machine-learning/crash-course/glossary#label)的程度。或者更悲观地说是衡量模型有多差。要确定此值，模型必须定义损失函数。例如，线性回归模型通常将[**均方误差**](https://developers.google.cn/machine-learning/crash-course/glossary#MSE)用于损失函数，而逻辑回归模型则使用[**对数损失函数**](https://developers.google.cn/machine-learning/crash-course/glossary#Log_Loss)。
-
-均方误差（MSE）：
-
-![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/1.png)
-
-### 3.降低损失
-
-在求解机器学习算法的模型参数，即无约束优化问题时，梯度下降（Gradient Descent）是最常采用的方法之一，另一种常用的方法是最小二乘法。在求解损失函数的最小值时，可以通过梯度下降法来一步步的迭代求解，得到最小化的损失函数和模型参数值。
-
- 梯度下降算法中，下一点位置 = 梯度x学习速率（步长）
-
-> **梯度(gradient)**：[**偏导数**](https://developers.google.cn/machine-learning/glossary/#partial_derivative)相对于所有自变量的向量。 在机器学习中，梯度是模型函数偏导数的向量。梯度指向最快上升的方向。
->
-> **梯度下降法(gradient descent)**：一种通过计算并且减小梯度将[**损失**](https://developers.google.cn/machine-learning/glossary/#loss)降至最低的技术，它以训练数据为条件，来计算损失相对于模型参数的梯度。通俗来说，梯度下降法以迭代方式调整参数，逐渐找到[**权重**](https://developers.google.cn/machine-learning/glossary/#weight)和偏差的最佳组合，从而将损失降至最低。
-
-#### 迭代方法
-
-![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/google-1.jpg)
-
-### 4.使用TF基础
-
-合成特征：一种[**特征**](https://developers.google.cn/machine-learning/crash-course/glossary#feature)，不在输入特征之列，而是从一个或多个输入特征衍生而来
-
-
-
 ### 5.泛化
 
 #### 判断模型出色与否
@@ -155,6 +101,4 @@
 
 - 对大规模数据集使用特征组合
 - 神经网络
-
-
 

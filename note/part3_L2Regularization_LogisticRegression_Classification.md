@@ -1,4 +1,4 @@
-## 9.正则化(Regularization)：简单性
+### 9.正则化(Regularization)：简单性
 
 #### L2正则化
 
