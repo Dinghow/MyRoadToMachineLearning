@@ -41,9 +41,9 @@
 根据Softmax函数的这一特点，常常将其用多类别领域，Softmax为每个类别分配一个小数表示概率，其和为1
 
 Softmax函数的表达式为：
-$$
-p(y = j|\textbf{x})  = \frac{e^{(\textbf{w}_j^{T}\textbf{x} + b_j)}}{\sum_{k\in K} {e^{(\textbf{w}_k^{T}\textbf{x} + b_k)}} }
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/18.png)
+
 而在神经网络中，Softmax层必须有和输出层一样的节点数
 
 #### Softmax的选项

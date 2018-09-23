@@ -52,9 +52,8 @@ L2 和 L1 采用不同的方式降低权重：
 激活函数的引入，在非线性上堆叠非线性，使得模型可以处理更为复杂的输出预测
 
 实际上所有的函数都可以作为激活函数，我们假设激活函数 $\sigma$ ，网络中节点的值为 $v$ :
-$$
-v = \sigma(\boldsymbol w \cdot \boldsymbol x+b)
-$$
+
+![](https://github.com/Dinghow/MyRoadToMachineLearning/raw/master/note/img/17.png)
 
 #### 组件
 
